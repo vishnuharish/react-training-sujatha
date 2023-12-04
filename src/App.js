@@ -1,25 +1,74 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export class App extends Component {
+  constructor(props) {
+    super(props);
+    console.log("Constructor");
+    this.state = {
+      text: "",
+    };
+    this.textChangeHandler = this.textChangeHandler.bind(this);
+  }
+
+  static getDerivedStateFromProps(props, state) {
+    console.log("GET DERIVED STATE FROM PROPS", props, state);
+    return null;
+  }
+
+  componentDidMount() {
+    console.log("Component Did Mount");
+  }
+
+  componentWillUnmount() {
+    console.log("Component Will Unmount");
+  }
+
+  textChangeHandler(event) {
+    this.setState({
+      ...this.state,
+      text: event.target.value,
+    });
+  }
+
+  numberChangeHandler = (event) => {
+    this.setState({
+      ...this.state,
+      number: event.target.value,
+    });
+  };
+
+  shouldComponentUpdate(props, state) {
+    console.log("SHOULD UPDATE", props, state);
+    return true;
+  }
+
+  componentDidUpdate() {
+    console.log("Component Did update");
+  }
+
+  render() {
+    const { text, number } = this.state;
+    const { name } = this.props;
+    console.log("RENDER");
+
+    return (
+      <div>
+        <h1>{name}</h1>
+        <div>
+          <label htmlFor="text">Text</label>
+          <input id="text" value={text} onChange={this.textChangeHandler} />
+          <p>{text}</p>
+        </div>
+        <div>
+          <label htmlFor="number">Number</label>
+          <input
+            id="number"
+            value={number}
+            onChange={this.numberChangeHandler}
+          />
+          <p>{number}</p>
+        </div>
+      </div>
+    );
+  }
 }
-
-export default App;
