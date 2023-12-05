@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Products from "./Products";
+import {Products} from "./Products";
 import './index.css';
 export class App extends Component {
   constructor(props) {
