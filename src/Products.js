@@ -6,6 +6,8 @@ export class Products extends Component {
         this.state = {
             car:'Ferrari'
         }
+
+    this.changeCarName = this.changeCarName.bind(this);
     }
     static getDerivedStateFromProps(props, state) {
         console.log("GET DERIVED STATE FROM PROPS", props, state);
