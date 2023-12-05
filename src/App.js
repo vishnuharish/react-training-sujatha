@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-
+import Products from "./Products";
+import './index.css';
 export class App extends Component {
   constructor(props) {
     super(props);
@@ -52,7 +53,7 @@ export class App extends Component {
     console.log("RENDER");
 
     return (
-      <div>
+      <div className="App">
         <h1>{name}</h1>
         <div>
           <label htmlFor="text">Text</label>
@@ -68,6 +69,7 @@ export class App extends Component {
           />
           <p>{number}</p>
         </div>
+        <Products model="2021" />
       </div>
     );
   }
