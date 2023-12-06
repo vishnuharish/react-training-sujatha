@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { PropsAndState } from "./components/PropsAndState";
-
+import {Products} from "./Products";
+import './index.css';
 export class App extends Component {
   constructor(props) {
     super(props);
