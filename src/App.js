@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Products from "./Products";
-import './index.css';
+import { PropsAndState } from "./components/PropsAndState";
+
 export class App extends Component {
   constructor(props) {
     super(props);
@@ -58,7 +58,7 @@ export class App extends Component {
         <div>
           <label htmlFor="text">Text</label>
           <input id="text" value={text} onChange={this.textChangeHandler} />
-          <p>{text}</p>
+          <PropsAndState text={text} number={null}/>
         </div>
         <div>
           <label htmlFor="number">Number</label>
@@ -67,7 +67,7 @@ export class App extends Component {
             value={number}
             onChange={this.numberChangeHandler}
           />
-          <p>{number}</p>
+          <PropsAndState text={null} number={number}/>
         </div>
         <Products model="2021" />
       </div>
