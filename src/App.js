@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {Products} from "./Products";
+import {PropsAndState} from "./components/PropsAndState";
 import './index.css';
 export class App extends Component {
   constructor(props) {
