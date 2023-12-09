@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import {TodoForm} from "../Todoform"
-import {TodoList} from '../Todolist'
+import {TodoFormFunc} from "./TodoFormFunc"
+import { TodoListFunc } from './TodoListFunc';
 
 export const TodoFunc = () => {
   const [todos, setTodos] = useState([]);
@@ -15,8 +15,8 @@ export const TodoFunc = () => {
 return(
     <div>
       <h1> Todos </h1>
-      <TodoForm onSubmit={onSubmit}/>
-      <TodoList todos={todos} removeItem={removeItem}/>
+      <TodoFormFunc onSubmit={onSubmit}/>
+      <TodoListFunc todos={todos} removeItem={removeItem}/>
     </div>
   )
 }
