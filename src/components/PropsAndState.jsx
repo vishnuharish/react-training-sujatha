@@ -1,9 +1,7 @@
 import React from 'react';
 
 export class PropsAndState extends React.Component {
-  constructor(props){
-    super(props);
-  }
+  
 
   render(){
     const {text, number} = this.props;  
