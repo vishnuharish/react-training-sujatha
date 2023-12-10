@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { TodoContext } from '../contexts/TodoContext';
 
 
-export const TodoListFunc = (props) => {
-const {todos} = props;
+export const TodoListFunc = () => {
+  const todoContext = useContext(TodoContext)
+  const {todos, removeTodos} = todoContext;
     return (
         <div>
           <ul>
             {
               todos?.map( todo => ( <li key={todo.id}>{todo.title}
               <button
-                onClick={() => props.removeItem(todo.id)}
+                onClick={() => removeTodos(todo.id)}
               >
                 X
               </button>

@@ -1,23 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext, useState } from "react";
+import { TodoContext } from "../contexts/TodoContext";
 import { v4 as uuidv4 } from "uuid";
 
-export const TodoFormFunc = (props) => {
+export const TodoFormFunc = () => {
+  const todoContext = useContext(TodoContext);
+  const {setTodos} = todoContext;
   const [value, setValue] = useState("");
-  
-  useEffect(() => {
-    console.log("Component Mounted")
-  }, [])
-
-  useEffect(() => {
-    console.log(value)
-  }, [value])
 
   const onChange = (event) => {
     setValue(event.target.value);
   };
   const onClick = () => {
     let id = uuidv4();
-    props.onSubmit({ id: id, title: value, isCompleted: false });
+    setTodos({ id: id, title: value, isCompleted: false });
     setValue("");
   };
   return (
