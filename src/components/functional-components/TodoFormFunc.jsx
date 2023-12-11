@@ -1,24 +1,29 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useRef } from "react";
 import { TodoContext } from "../contexts/TodoContext";
 import { v4 as uuidv4 } from "uuid";
 
 export const TodoFormFunc = () => {
   const todoContext = useContext(TodoContext);
+  const titleRef = useRef();
   const {setTodos} = todoContext;
-  const [value, setValue] = useState("");
-
-  const onChange = (event) => {
-    setValue(event.target.value);
-  };
+  // const [value, setValue] = useState("");
+  // const onChange = (event) => {
+  //   setValue(event.target.value);
+  // };
+  // {
+  // id: uuid,
+  // productName: string,
+  // quantity: number,
+  // inStock: true
+  // }
   const onClick = () => {
     let id = uuidv4();
-    setTodos({ id: id, title: value, isCompleted: false });
-    setValue("");
+    setTodos({ id: id, title: titleRef.current.value, isCompleted: false });
   };
   return (
     <div>
       <label htmlFor="todo">Todo</label>
-      <input value={value} id="todo" onChange={onChange} />
+      <input ref={titleRef} id="todo"/>
       <button
         onClick={() => {
           onClick();

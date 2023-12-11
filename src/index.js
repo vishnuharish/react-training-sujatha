@@ -2,15 +2,17 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { App } from "./App";
-import { TodoFunc } from "./components/functional-components/TodoFunc";
 import TodoState from "./components/contexts/TodoState";
+import { TodoFormFunc } from "./components/functional-components/TodoFormFunc";
+import { TodoListFunc } from "./components/functional-components/TodoListFunc";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
+    <App name="React" />
     <TodoState>
-      <App name="React" />
-      <TodoFunc />
+      <TodoFormFunc/>
+      <TodoListFunc/>
     </TodoState>
   </React.StrictMode>,
 );
