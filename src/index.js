@@ -5,11 +5,17 @@ import { App } from "./App";
 import TodoState from "./components/contexts/TodoState";
 import { TodoFormFunc } from "./components/functional-components/TodoFormFunc";
 import { TodoListFunc } from "./components/functional-components/TodoListFunc";
+import { Products } from "./components/products/Products";
+import { ProductState } from "./components/products/ProductsState";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <App name="React" />
+    <ProductState>
+    <Products />
+    </ProductState>
+   
     <TodoState>
       <TodoFormFunc/>
       <TodoListFunc/>
