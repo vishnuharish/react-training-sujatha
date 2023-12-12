@@ -1,10 +1,14 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { TodoContext } from '../contexts/TodoContext';
 
 
 export const TodoListFunc = () => {
   const todoContext = useContext(TodoContext)
-  const {todos, removeTodos} = todoContext;
+  const {todos, removeTodos, getTodos} = todoContext;
+  useEffect(() => {
+    getTodos()
+    //eslint-disable-next-line
+  }, [])
     return (
         <div>
           <ul>
