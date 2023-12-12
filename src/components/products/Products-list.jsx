@@ -1,9 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { ProductsContext } from "./contexts/ProductsContext";
 
 export const ProductsList = () => {
   const productsContext = useContext(ProductsContext);
-  const { products, removeProducts } = productsContext;
+  const { products, removeProducts,getProducts } = productsContext;
+  useEffect(() => {
+    getProducts()
+  }, [])
   return (
     <div>
       <ul>
