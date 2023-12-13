@@ -9,15 +9,28 @@ export const ProductState =(props) => {
     };
 
     const [state,dispatch] = useReducer(ProductsReducer,initialState);
-    const getProducts = () => {
-        dispatch({type: GET_PRODUCTS, payload: state.products})
-      }
+    const getProducts = async () => {
+      const data = await fetch("/products");
+      const productList = await data.json();
+      dispatch({ type: GET_PRODUCTS, payload: productList })
+    }
     
-      const setProducts = (payload) => {
-        dispatch({type: SET_PRODUCTS, payload: {...payload}})
+      const setProducts = async (payload) => {
+        const data = await fetch("/products",{
+          method:"POST",
+          headers:{
+            "Content-type": "application/json",
+          },
+          body:JSON.stringify(payload)
+        })
+        const productList = await data.json();
+        dispatch({type: SET_PRODUCTS, payload: {...productList}})
       }
-      const removeProducts = (payload) => {
-        dispatch({type: REMOVE_PRODUCTS, payload})
+      const removeProducts = async (payload) => {
+        const data = await fetch(`/products/${payload}`, {
+          method:"DELETE"
+        })
+        dispatch({type: REMOVE_PRODUCTS, data})
       }
     
     
