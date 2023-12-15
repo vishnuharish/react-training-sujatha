@@ -27,10 +27,10 @@ export const ProductState =(props) => {
         dispatch({type: SET_PRODUCTS, payload: {...productList}})
       }
       const removeProducts = async (payload) => {
-        const data = await fetch(`/products/${payload}`, {
+        await fetch(`/products/${payload}`, {
           method:"DELETE"
         })
-        dispatch({type: REMOVE_PRODUCTS, data})
+        dispatch({type: REMOVE_PRODUCTS, payload})
       }
     
     
