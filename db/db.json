@@ -1,26 +1,6 @@
 {
   "todos": [
     {
-      "id": 2,
-      "title": "Todo-2",
-      "isCompleted": true
-    },
-    {
-      "id": 3,
-      "title": "Todo-3",
-      "isCompleted": true
-    },
-    {
-      "id": 4,
-      "title": "Todo-4",
-      "isCompleted": true
-    },
-    {
-      "id": 5,
-      "title": "Todo-5",
-      "isCompleted": true
-    },
-    {
       "id": 6,
       "title": "Todo-6",
       "isCompleted": true
@@ -51,11 +31,6 @@
       "isCompleted": true
     },
     {
-      "id": 13,
-      "title": "Todo-13",
-      "isCompleted": true
-    },
-    {
       "id": 14,
       "title": "Todo-14",
       "isCompleted": true
@@ -67,42 +42,6 @@
     }
   ],
   "products": [
-    {
-      "id": 2,
-      "name": "Brandy - Orange, Mc Guiness",
-      "quantity": 86,
-      "inStock": true
-    },
-    {
-      "id": 3,
-      "name": "Juice Peach Nectar",
-      "quantity": 88,
-      "inStock": false
-    },
-    {
-      "id": 4,
-      "name": "Scallops - 10/20",
-      "quantity": 77,
-      "inStock": true
-    },
-    {
-      "id": 5,
-      "name": "Numi - Assorted Teas",
-      "quantity": 35,
-      "inStock": false
-    },
-    {
-      "id": 6,
-      "name": "Anchovy Paste - 56 G Tube",
-      "quantity": 94,
-      "inStock": false
-    },
-    {
-      "id": 7,
-      "name": "Placemat - Scallop, White",
-      "quantity": 23,
-      "inStock": true
-    },
     {
       "id": 8,
       "name": "Pate - Peppercorn",
@@ -296,21 +235,9 @@
       "inStock": true
     },
     {
-      "id": 40,
-      "name": "Banana - Green",
-      "quantity": 66,
-      "inStock": false
-    },
-    {
       "id": 41,
       "name": "Chicken - Whole Fryers",
       "quantity": 32,
-      "inStock": false
-    },
-    {
-      "id": 42,
-      "name": "Ham - Procutinni",
-      "quantity": 95,
       "inStock": false
     },
     {
@@ -336,12 +263,6 @@
       "name": "Icecream - Dstk Super Cone",
       "quantity": 13,
       "inStock": true
-    },
-    {
-      "id": 47,
-      "name": "Tea - Black Currant",
-      "quantity": 35,
-      "inStock": false
     },
     {
       "id": 48,

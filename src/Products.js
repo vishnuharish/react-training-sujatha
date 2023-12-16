@@ -1,6 +1,7 @@
 import React,{Component} from "react";
+import { withRouter } from "./components/utils/withRouter";
 
-export class Products extends Component {
+class Products extends Component {
     constructor(props){
         super(props)
         this.state = {
@@ -29,10 +30,9 @@ export class Products extends Component {
     }
 
     render(){
-        const {model} = this.props;
         return (
             <div className="App">
-                <h1>{this.state.car}-{model}</h1>
+                <h1>{this.state.car}-{this.props.location?.state?.model}</h1>
                 <button  onClick={() => this.changeCarName()}>
                     Change
                 </button>
@@ -40,3 +40,5 @@ export class Products extends Component {
         )
     }
 }
+
+export default withRouter(Products)
