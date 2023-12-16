@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import {Products} from "./Products";
 import {PropsAndState} from "./components/PropsAndState";
 import './index.css';
 export class App extends Component {
@@ -70,7 +69,6 @@ export class App extends Component {
           />
           <PropsAndState text={null} number={number}/>
         </div>
-        <Products model="2021" />
       </div>
     );
   }
