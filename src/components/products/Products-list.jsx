@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { ProductsContext } from "./contexts/ProductsContext";
+import { Link, Outlet } from "react-router-dom";
 
 export const ProductsList = () => {
   const productsContext = useContext(ProductsContext);
@@ -17,9 +18,11 @@ export const ProductsList = () => {
             <button onClick={() => removeProducts(product.id)}>
               X
             </button>
+            <Link to={`/products/${product.id}`}>{product.name}</Link>
           </li>
         ))}
       </ul>
+      <Outlet/>
     </div>
   );
 };
